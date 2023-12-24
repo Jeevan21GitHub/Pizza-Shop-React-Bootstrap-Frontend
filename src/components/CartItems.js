@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect} from "react";
 
 import ListGroup from 'react-bootstrap/ListGroup';
 
 import { Button } from "react-bootstrap";
-import Data from "../data"
+
 
 const CartItems = (props) => {
   const handleRemove=(id)=>{
@@ -12,11 +12,11 @@ const CartItems = (props) => {
     props.setCartItem(arr);
     handlePrice();
   }
-  const handlePrice=()=>{
+  const handlePrice=useCallback(()=>{
     let ans=0;
     props.cartItem.map((item)=>(ans+=item.amount*item.price));
     props.setPrice(ans);
-  }
+  }, [props.cartItem, props.setPrice])
   const RefreshAmount=(item)=>{
     const ind = props.cartItem.findIndex((i) => i.id === item.id);
     const arr = [...props.cartItem];
@@ -28,7 +28,7 @@ const CartItems = (props) => {
   useEffect(()=>{
     handlePrice();
    
-  }, [props.cartItem])
+  }, [props.cartItem, handlePrice])
   return (
     <>
       {
