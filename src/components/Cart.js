@@ -3,8 +3,9 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CartItems from "./CartItems";
-const Cart = () => {
+const Cart = (props) => {
   const [show, setShow] = useState(false);
+  const [price,setPrice]=useState(0);
   return (
     <>
       <Button
@@ -12,10 +13,10 @@ const Cart = () => {
         onClick={() => setShow(!show)}
         className="me-2 position-relative"
       >
-        <i class="bi bi-cart3"></i>
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          9+
-          <span class="visually-hidden">Cart</span>
+        <i className="bi bi-cart3"></i>
+        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {props.cartItem.length}
+          <span className="visually-hidden">Cart</span>
         </span>
       </Button>
       <Offcanvas
@@ -29,8 +30,10 @@ const Cart = () => {
           <Offcanvas.Title>Cart:</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <CartItems />
+          <CartItems cartItem={props.cartItem} setCartItem={props.setCartItem} setPrice={setPrice} handleChange={props.handleChange} />
+          <Button variant="success" className="w-100 mt-2">Total: ${price}</Button>
           <div className="text-end my-2">
+         
             <Button>Proceed</Button>
           </div>
         </Offcanvas.Body>

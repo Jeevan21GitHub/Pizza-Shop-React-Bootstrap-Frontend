@@ -1,0 +1,46 @@
+const itemListData=[
+    {
+        Title:"Pizza1",
+        id:1,
+        img:"https://www.verdictfoodservice.com/wp-content/uploads/sites/17/2023/04/Rudys-Pizza-Napoletana.jpg",
+        amount:1,
+        price:20
+    },
+    {
+        Title:"Pizza2",
+        id:2,
+        img:"https://upload.wikimedia.org/wikipedia/commons/9/91/Pizza-3007395.jpg",
+        amount:1,
+        price:10
+    },
+    {
+        Title:"Pizza3",
+        id:3,
+        img:"https://c4.wallpaperflare.com/wallpaper/251/637/208/food-pizza-wallpaper-preview.jpg",
+        amount:1,
+        price:15
+    },
+    {
+        Title:"Pizza4",
+        id:4,
+        img:"https://bigseventravel.com/wp-content/uploads/2019/07/Screenshot-2019-07-01-at-15.17.07-1.jpg",
+        amount:1,
+        price:30
+    },
+    {
+        Title:"Pizza5",
+        id:5,
+        img:"https://bigseventravel.com/wp-content/uploads/2019/07/Screenshot-2019-07-01-at-15.17.07-1.jpg",
+        amount:1,
+        price:40
+    },
+    {
+        Title:"Pizza6",
+        id:6,
+        img:"https://bigseventravel.com/wp-content/uploads/2019/07/Screenshot-2019-07-01-at-15.17.07-1.jpg",
+        amount:1,
+        price:35
+    }
+]
+
+export default itemListData;

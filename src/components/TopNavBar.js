@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import './TopNavBar.css'
 import Cart from "./Cart";
 
-const TopNavBar = () => {
+const TopNavBar = (props) => {
   return (
     <>     
         <Navbar expand="lg" className="bg-body-tertiary" style={{position:"sticky", top:0,zIndex:1}}>
@@ -18,7 +18,7 @@ const TopNavBar = () => {
                 <Nav.Link href="#menu" className="fw-bold">Menu</Nav.Link>
                 <Nav.Link href="#mustTry" className="fw-bold">Must Try</Nav.Link>
                 <Nav.Link href="#contact" className="fw-bold">Contact Us</Nav.Link>
-                <Nav.Link href="#" ><Cart/></Nav.Link>
+                <Nav.Link href="#" ><Cart cartItem={props.cartItem} setCartItem={props.setCartItem}  handleChange={props.handleChange} /></Nav.Link>
                       
               </Nav>
             </Navbar.Collapse>
